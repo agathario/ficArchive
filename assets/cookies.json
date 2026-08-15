@@ -1,0 +1,65 @@
+[
+    {
+        "domain": ".archiveofourown.org",
+        "expirationDate": 1786286998.209749,
+        "hostOnly": false,
+        "httpOnly": true,
+        "name": "__cf_bm",
+        "path": "/",
+        "sameSite": "no_restriction",
+        "secure": true,
+        "session": false,
+        "storeId": null,
+        "value": "sZwRi6z2MYxIoH0.h60sQJNir2LFIP7Zek3DOQLTiCU-1786285198.1622372-1.0.1.1-BxsoZ.hxQaZctoFvr4_z7NmD2M48twSCiuMHjWbYYkv8xxriEg6w9bxDRV0xfLbQDpwkSBmznPsJNlqR1W01uI.y.tDQDv54cf331evTKlqPczwYW92wC5I8hRlTBH1j"
+    },
+    {
+        "domain": "archiveofourown.org",
+        "hostOnly": true,
+        "httpOnly": false,
+        "name": "view_adult",
+        "path": "/",
+        "sameSite": "lax",
+        "secure": false,
+        "session": true,
+        "storeId": null,
+        "value": "true"
+    },
+    {
+        "domain": ".archiveofourown.org",
+        "hostOnly": false,
+        "httpOnly": true,
+        "name": "_cfuvid",
+        "path": "/",
+        "sameSite": "no_restriction",
+        "secure": true,
+        "session": true,
+        "storeId": null,
+        "value": "93tjKD9umBW9..Svyg00pshH04gZxinzZUS_t9AYF14-1785899178.47523-1.0.1.1-BY6B3WE6CE.K5ZyJ_knjKPT1wfh1Dm8zuy1EMMlJo1k"
+    },
+    {
+        "domain": "archiveofourown.org",
+        "expirationDate": 1787494797.835492,
+        "hostOnly": true,
+        "httpOnly": true,
+        "name": "_otwarchive_session",
+        "path": "/",
+        "sameSite": "lax",
+        "secure": false,
+        "session": false,
+        "storeId": null,
+        "value": "eyJfcmFpbHMiOnsibWVzc2FnZSI6ImV5SnpaWE56YVc5dVgybGtJam9pTmpVeU9XTTJZemRoWXpSbVlUWTBZamRqTXpNeVltTm1ZbVppWm1WbE5tRWlMQ0ozWVhKa1pXNHVkWE5sY2k1MWMyVnlMbXRsZVNJNlcxc3pNemd5TlRBd1hTd2lKREpoSkRFMEpESTVTamgzVkVkcWNHOUJSMGxMVERBdmRXbG1ZazhpWFN3aVgyTnpjbVpmZEc5clpXNGlPaUozVWt4aE1uaE5iR3RhWlRGc1RXWTVha3A1UkhGalZreFZNM0ZmVkdWeFlscHdiRTlFYXpaamExWlZJbjA9IiwiZXhwIjoiMjAyNi0wOC0yM1QxNDoxOTo1Ny43ODVaIiwicHVyIjoiY29va2llLl9vdHdhcmNoaXZlX3Nlc3Npb24ifX0%3D--bc8468ed7ee2e7632952eadfd66f1e2f035e71cd"
+    },
+    {
+        "domain": "archiveofourown.org",
+        "expirationDate": 1814836051.990378,
+        "hostOnly": true,
+        "httpOnly": false,
+        "name": "user_credentials",
+        "path": "/",
+        "sameSite": "lax",
+        "secure": false,
+        "session": false,
+        "storeId": null,
+        "value": "1"
+    }
+]
