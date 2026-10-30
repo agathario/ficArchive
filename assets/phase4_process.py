@@ -1172,15 +1172,22 @@ INDEX_TEMPLATE = """\
   <summary>PLEASE READ IF YOU AREN'T WILLOW ▾</summary>
   <div class="visitor-body">
     <p>this is an archive of fics i have downloaded over the years. some are old, some are new, some may not exist on ao3 anymore.</p>
-    <p>If you are an author and do NOT want your fics here, please reach out to agathariophile on twt. same if you have a fic that you DO want me to post here.</p>
-    <p>a few notes:</p>
+    <p><b>IF YOU ARE AN AUTHOR</b> and do NOT want your fics here, please reach out to agathariophile on twt. same if you have a fic that you DO want me to post here.</p>
+    <p><b>ABOUT THE SITE</b></p>
     <ul>
-      <li>i think some fics here have been accused of ai use and are tagged accordingly (were..they broke and i'm working on remembering which ones they were. i may just pull them.)</li>
       <li>feel free to use the top 25 feature at the top left if you get bored. it's local to whatever machine you're on.</li>
       <li>each fic has a kudos reminder button at the bottom. this saves a reminder locally and can be accessed at the link at the top left of this index page.</li>
       <li>tags on the index page are truncated. all author's tags are still intact within the fic, so please check before you read.</li>
-      <li>hope you like dark mode. ☾</li>
     </ul>
+    <br>
+    <p><b>A NOTE ON AI USE</b></p>
+    <ul>
+      <li>some fics here have been accused of ai use and are tagged accordingly (were..they broke and i'm working on remembering which ones they were. STAY TUNED.)</li>
+      <li>no fic content is processed <b>through</b> or <b>by</b> ai. that's gross</li>
+      <li>claude was used to improve the quality of the js and python scripts i use for download automation as well as the top 25 feature at the top left (because pairwise ranking is confusing af).</li>
+      <li>the site itself is born out of my purple-obsessed brain</li>
+    </ul>
+    <p>hope you like dark mode. ☾</p>
   </div>
 </details>
 
