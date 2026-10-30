@@ -87,6 +87,17 @@ PENDO_SNIPPET = """\
 
 KUDOS_SCRIPT_SRC = "../assets/kudos.js"
 
+# Favicon  (files live in assets/favicon/; assets/add_favicon.py backfills
+# existing fic pages). prefix is "" for root pages, "../" for archive pages.
+def favicon_links(prefix: str = "") -> str:
+    d = f"{prefix}assets/favicon"
+    return (
+        f'<link rel="icon" href="{d}/favicon.ico" sizes="any">\n'
+        f'<link rel="icon" type="image/png" sizes="32x32" href="{d}/favicon-32x32.png">\n'
+        f'<link rel="icon" type="image/png" sizes="16x16" href="{d}/favicon-16x16.png">\n'
+        f'<link rel="apple-touch-icon" href="{d}/apple-touch-icon.png">'
+    )
+
 # ---------------------------------------------------------------------------
 # Paths  (process.py lives in assets/, project root is one level up)
 # ---------------------------------------------------------------------------
@@ -486,6 +497,9 @@ def clean_html(soup: BeautifulSoup, meta: dict) -> BeautifulSoup:
     css_link = soup.new_tag("link", rel="stylesheet", href="../assets/darkMode.css")
     head.append(css_link)
 
+    # --- Favicon ---
+    head.append(BeautifulSoup(favicon_links("../"), "html.parser"))
+
     # --- Inject/update archive meta tags ---
     archive_meta_fields = {
         "fic-author":      meta.get("author", ""),
@@ -661,6 +675,7 @@ INDEX_TEMPLATE = """\
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Agathario Archive</title>
+{favicon}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap" rel="stylesheet">
@@ -1533,7 +1548,8 @@ def build_index(manifest: dict):
         last_updated = dt.strftime(f"%B {dt.day}, %Y")
     except ValueError:
         last_updated = "unknown"
-    html = INDEX_TEMPLATE.format(fics_json=fics_json, last_updated=last_updated, pendo=PENDO_SNIPPET)
+    html = INDEX_TEMPLATE.format(fics_json=fics_json, last_updated=last_updated, pendo=PENDO_SNIPPET,
+                                 favicon=favicon_links())
     with open(INDEX_FILE, "w", encoding="utf-8") as f:
         f.write(html)
     log.info(f"index.html rebuilt ({len(manifest['fics'])} fics)")
