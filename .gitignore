@@ -16,3 +16,4 @@ ficArchive.code-workspace
 originals/
 # Claude desktop app preview config — local only
 .claude/launch.json
+process.log
