@@ -690,14 +690,14 @@ INDEX_TEMPLATE = """\
     }}
 
     /* ---- Header ---- */
-    .archive-header {{
+    .index-header {{
       padding: 2.5rem 1rem 1.25rem;
       text-align: center;
       border-bottom: 1px solid #1e1838;
       margin-bottom: 2rem;
     }}
     /* Title: Cinzel caps in Agatha purple → Rio green (falls back to Georgia offline) */
-    .archive-header h1 {{
+    .index-header h1 {{
       font-family: "Cinzel", Georgia, serif;
       font-size: clamp(1.15rem, 6vw, 1.55rem); /* stays on one line on small phones */
       font-weight: 500;
@@ -722,7 +722,7 @@ INDEX_TEMPLATE = """\
       background: linear-gradient(90deg, transparent, #c4a8ff, #7fc98f, transparent);
       opacity: 0.7;
     }}
-    .archive-header p {{
+    .index-header p {{
       margin-top: 0.35rem;
       font-size: 0.8rem;
       color: #6a5e8a;
@@ -734,12 +734,12 @@ INDEX_TEMPLATE = """\
     }}
 
     /* ---- Visitor banner ---- */
-    .visitor-banner {{
+    .non-willow-notice {{
       max-width: 660px;
       margin: -0.75rem auto 1.5rem;
       padding: 0 1rem;
     }}
-    .visitor-banner summary {{
+    .non-willow-notice summary {{
       list-style: none;
       cursor: pointer;
       user-select: none;
@@ -752,13 +752,13 @@ INDEX_TEMPLATE = """\
       border-radius: 8px;
       padding: 0.35rem 0.9rem;
     }}
-    .visitor-banner summary::-webkit-details-marker {{ display: none; }}
-    .visitor-banner[open] summary {{
+    .non-willow-notice summary::-webkit-details-marker {{ display: none; }}
+    .non-willow-notice[open] summary {{
       color: #c4a8ff;
       border-color: #5030a8;
     }}
-    .visitor-banner p + p {{ margin-top: 0.6rem; }}
-    .visitor-body {{
+    .non-willow-notice p + p {{ margin-top: 0.6rem; }}
+    .non-willow-body {{
       margin-top: 0.5rem;
       font-size: 0.78rem;
       line-height: 1.6;
@@ -769,12 +769,12 @@ INDEX_TEMPLATE = """\
       border-radius: 8px;
       padding: 0.7rem 1rem;
     }}
-    .visitor-body p + p, .visitor-body p + ul {{ margin-top: 0.5rem; }}
-    .visitor-body ul {{ padding-left: 1.2rem; }}
-    .visitor-body li + li {{ margin-top: 0.2rem; }}
+    .non-willow-body p + p, .non-willow-body p + ul {{ margin-top: 0.5rem; }}
+    .non-willow-body ul {{ padding-left: 1.2rem; }}
+    .non-willow-body li + li {{ margin-top: 0.2rem; }}
 
     /* ---- Collapsible filter/search ---- */
-    .filter-section {{
+    .search-n-filter {{
       max-width: 660px;
       margin: 0 auto 0.75rem;
       padding: 0 1rem;
@@ -845,7 +845,7 @@ INDEX_TEMPLATE = """\
     }}
 
     /* ---- Sort row ---- */
-    .sort-row {{
+    .sorting-hat {{
       display: flex;
       flex-wrap: wrap;
       gap: 0.4rem;
@@ -856,7 +856,7 @@ INDEX_TEMPLATE = """\
     }}
 
     /* ---- Card grid ---- */
-    .card-grid {{
+    .fic-list {{
       display: flex;
       flex-direction: column;
       gap: 0.85rem;
@@ -880,28 +880,28 @@ INDEX_TEMPLATE = """\
       border-color: #4a36a0;
       background: #181330;
     }}
-    .card-title {{
+    .fic-title {{
       font-size: 1.1rem;
       font-weight: 600;
       color: #cbb8ff;
       line-height: 1.3;
       margin-bottom: 0.2rem;
     }}
-    .card-author {{
+    .fic-author {{
       font-size: 0.8rem;
       color: #7a6da0;
       margin-bottom: 0.55rem;
     }}
 
     /* meta row: ship / rating / status / words */
-    .card-meta {{
+    .fic-meta {{
       display: flex;
       flex-wrap: wrap;
       gap: 0.3rem;
       margin-bottom: 0.35rem;
     }}
     /* extra custom tags row */
-    .card-tags {{
+    .fic-tags {{
       display: flex;
       flex-wrap: wrap;
       gap: 0.3rem;
@@ -927,7 +927,7 @@ INDEX_TEMPLATE = """\
     .badge.wip      {{ color: #a888d8; border-color: #2a1e48; background: #150e28; }}
     .badge.words    {{ color: #6a6090; border-color: #201c38; background: transparent; }}
 
-    .card-summary {{
+    .fic-summary {{
       font-size: 0.8rem;
       color: #8878b0;
       line-height: 1.55;
@@ -974,7 +974,7 @@ INDEX_TEMPLATE = """\
     .to-top:hover {{ background: #2a1f50; opacity: 1; }}
 
     /* ---- Stats link + dialog ---- */
-    .archive-header {{ position: relative; }}
+    .index-header {{ position: relative; }}
     .stats-link {{
       position: absolute;
       top: 0.9rem;
@@ -989,8 +989,8 @@ INDEX_TEMPLATE = """\
       cursor: pointer;
       transition: color 0.15s, border-color 0.15s;
     }}
-    .random-chip {{ margin-left: auto; }}
-    .random-chip:hover {{ border-color: #2a4a34; color: #7fc98f; }}
+    .roulette-chip {{ margin-left: auto; }}
+    .roulette-chip:hover {{ border-color: #2a4a34; color: #7fc98f; }}
     .rank-link {{
       position: absolute;
       top: 0.9rem;
@@ -1172,7 +1172,7 @@ INDEX_TEMPLATE = """\
 </head>
 <body>
 
-<div class="archive-header">
+<div class="index-header">
   <button class="stats-link" id="stats-open" type="button" title="Archive stats">✦ stats</button>
   <a class="rank-link" href="rank.html" title="Rank your top 25">♛ top 25</a>
   <a class="rank-link kudos-link" href="kudos.html" title="Kudos reminders">♡ kudos list</a>
@@ -1183,9 +1183,9 @@ INDEX_TEMPLATE = """\
   <p class="last-updated">last updated {last_updated}</p>
 </div>
 
-<details class="visitor-banner">
+<details class="non-willow-notice">
   <summary>PLEASE READ IF YOU AREN'T WILLOW ▾</summary>
-  <div class="visitor-body">
+  <div class="non-willow-body">
     <p>this is an archive of fics i have downloaded over the years. some are old, some are new, some may not exist on ao3 anymore.</p>
     <p><b>IF YOU ARE AN AUTHOR</b> and do NOT want your fics here, please reach out to agathariophile on twt. same if you have a fic that you DO want me to post here.</p>
     <p><b>ABOUT THE SITE</b></p>
@@ -1206,7 +1206,7 @@ INDEX_TEMPLATE = """\
   </div>
 </details>
 
-<details class="filter-section">
+<details class="search-n-filter">
   <summary class="filter-toggle">Filter &amp; search ▾</summary>
   <div class="filter-bar">
     <input class="search-input" type="search" id="search"
@@ -1220,18 +1220,18 @@ INDEX_TEMPLATE = """\
   </div>
 </details>
 
-<div class="sort-row">
+<div class="sorting-hat">
   <span class="chip-label">Sort:</span>
   <button class="chip active" data-sort="default">Default</button>
   <button class="chip" data-sort="wc_desc">Words</button>
   <button class="chip" data-sort="updated">Updated</button>
   <button class="chip" data-sort="alpha">A–Z</button>
-  <button class="chip random-chip" id="random-fic" type="button" title="Open a random fic from the ones showing">⚄ Random</button>
+  <button class="chip roulette-chip" id="roulette-fic" type="button" title="Open a random fic from the ones showing">⚄ Random</button>
 </div>
 
 <div class="pinned-filter" id="pinned-filter"></div>
 <div class="count-label" id="visible-count"></div>
-<div class="card-grid" id="card-grid"></div>
+<div class="fic-list" id="fic-list"></div>
 
 <button class="to-top" id="to-top" type="button" aria-label="Back to top" title="Back to top">↑</button>
 
@@ -1328,7 +1328,7 @@ function render() {{
   const ratingFilters = activeFilters("rating-chips");
   const statusFilters = activeFilters("status-chips");
 
-  const grid = document.getElementById("card-grid");
+  const grid = document.getElementById("fic-list");
   grid.innerHTML = "";
 
   let visible = 0;
@@ -1352,16 +1352,16 @@ function render() {{
     const extraTags = (fic.custom_tags || []);
 
     card.innerHTML = `
-      <div class="card-title">${{fic.title || "Untitled"}}</div>
-      <div class="card-author">by ${{fic.author || "Unknown"}}</div>
-      <div class="card-meta">
+      <div class="fic-title">${{fic.title || "Untitled"}}</div>
+      <div class="fic-author">by ${{fic.author || "Unknown"}}</div>
+      <div class="fic-meta">
         ${{fic.ship   ? `<span class="badge ship">${{fic.ship}}</span>` : ""}}
         ${{rc         ? `<span class="badge ${{rc}}">${{fic.rating}}</span>` : ""}}
         ${{sc         ? `<span class="badge ${{sc}}">${{fic.status}}</span>` : ""}}
         ${{wc         ? `<span class="badge words">${{wc}} words</span>` : ""}}
       </div>
-      ${{extraTags.length ? `<div class="card-tags">${{extraTags.map(t => `<span class="badge">${{t}}</span>`).join("")}}</div>` : ""}}
-      ${{fic.summary ? `<p class="card-summary">${{fic.summary}}</p>` : ""}}
+      ${{extraTags.length ? `<div class="fic-tags">${{extraTags.map(t => `<span class="badge">${{t}}</span>`).join("")}}</div>` : ""}}
+      ${{fic.summary ? `<p class="fic-summary">${{fic.summary}}</p>` : ""}}
     `;
     grid.appendChild(card);
   }});
@@ -1379,9 +1379,9 @@ function render() {{
     `${{FICS.length}} fic${{FICS.length !== 1 ? "s" : ""}} archived`;
 }}
 
-document.querySelectorAll(".sort-row .chip[data-sort]").forEach(chip => {{
+document.querySelectorAll(".sorting-hat .chip[data-sort]").forEach(chip => {{
   chip.addEventListener("click", () => {{
-    document.querySelectorAll(".sort-row .chip[data-sort]").forEach(c => c.classList.remove("active"));
+    document.querySelectorAll(".sorting-hat .chip[data-sort]").forEach(c => c.classList.remove("active"));
     chip.classList.add("active");
     sortMode = chip.dataset.sort;
     render();
@@ -1509,8 +1509,8 @@ let pinned = null;  // {{ key: "tag" | "author", val }}, set by clicking a label
 const statsDialog = document.getElementById("stats-dialog");
 
 // Random: picks from the cards currently showing, so it respects search/filters
-document.getElementById("random-fic").addEventListener("click", () => {{
-  const cards = document.querySelectorAll("#card-grid a.fic-card");
+document.getElementById("roulette-fic").addEventListener("click", () => {{
+  const cards = document.querySelectorAll("#fic-list a.fic-card");
   if (!cards.length) return;
   window.location.href = cards[Math.floor(Math.random() * cards.length)].href;
 }});
