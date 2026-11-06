@@ -681,11 +681,33 @@ INDEX_TEMPLATE = """\
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
   <style>
+    :root {{
+      --bg: #0b0917;
+      --bg-card: #13102a;
+      --bg-card-hover: #181330;
+      --bg-input: #17112b;
+      --bg-sunken: #0f0c22;
+      --border-faint: #1e1838;
+      --border: #221a40;
+      --border-strong: #2a2248;
+      --text: #d8cff0;
+      --text-bright: #e4dcff;
+      --title: #cbb8ff;
+      --accent: #c4a8ff;
+      --accent-deep: #5030a8;
+      --muted: #8a7fb0;
+      --faint: #5a4a8a;
+      --dim: #3d3560;
+      --green: #7fc98f;
+      --grad-start: #9900ff;
+      --grad-end: #38ec5f;
+    }}
+
     *, *::before, *::after {{ box-sizing: border-box; margin: 0; padding: 0; }}
 
     body {{
-      background: #0b0917;
-      color: #d8cff0;
+      background: var(--bg);
+      color: var(--text);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       min-height: 100vh;
     }}
@@ -694,7 +716,7 @@ INDEX_TEMPLATE = """\
     .index-header {{
       padding: 1rem 1rem 1.25rem;
       text-align: center;
-      border-bottom: 1px solid #1e1838;
+      border-bottom: 1px solid var(--border-faint);
       margin-bottom: 2rem;
     }}
     .index-header h1 {{
@@ -703,7 +725,7 @@ INDEX_TEMPLATE = """\
       font-weight: 500;
       letter-spacing: 0.18em;
       padding-left: 0.18em;
-      background: linear-gradient(90deg, #9900ff, #38ec5f);
+      background: linear-gradient(90deg, var(--grad-start), var(--grad-end));
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -712,20 +734,20 @@ INDEX_TEMPLATE = """\
       font-size: 0.8rem;
       letter-spacing: 0.6em;
       padding-left: 0.6em;
-      color: #5a4a8a;
+      color: var(--faint);
       margin-bottom: 0.4rem;
     }}
     .header-rule {{
       height: 1px;
       width: 180px;
       margin: 0.7rem auto 0;
-      background: linear-gradient(90deg, transparent, #c4a8ff, #7fc98f, transparent);
+      background: linear-gradient(90deg, transparent, var(--grad-start), var(--grad-end), transparent);
       opacity: 0.7;
     }}
     .index-header p {{
       margin-top: 0.35rem;
       font-size: 0.8rem;
-      color: #8a7fb0;
+      color: var(--muted);
     }}
 
     /* site disclaimer */
@@ -740,27 +762,27 @@ INDEX_TEMPLATE = """\
       user-select: none;
       display: inline-block;
       font-size: 0.78rem;
-      color: #8878b0;
-      background: #13102a;
-      border: 1px solid #221a40;
-      border-left: 3px solid #5030a8;
+      color: var(--muted);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent-deep);
       border-radius: 8px;
       padding: 0.35rem 0.9rem;
     }}
     .non-willow-notice summary::-webkit-details-marker {{ display: none; }}
     .non-willow-notice[open] summary {{
-      color: #c4a8ff;
-      border-color: #5030a8;
+      color: var(--accent);
+      border-color: var(--accent-deep);
     }}
     .non-willow-notice p + p {{ margin-top: 0.6rem; }}
     .non-willow-body {{
       margin-top: 0.5rem;
       font-size: 0.78rem;
       line-height: 1.6;
-      color: #8878b0;
-      background: #13102a;
-      border: 1px solid #221a40;
-      border-left: 3px solid #5030a8;
+      color: var(--muted);
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent-deep);
       border-radius: 8px;
       padding: 0.7rem 1rem;
     }}
@@ -778,17 +800,17 @@ INDEX_TEMPLATE = """\
       list-style: none;
       cursor: pointer;
       font-size: 0.78rem;
-      color: #8a7fb0;
+      color: var(--muted);
       padding: 0.3rem 0.7rem;
-      border: 1px solid #1e1838;
+      border: 1px solid var(--border-faint);
       border-radius: 6px;
       display: inline-block;
       user-select: none;
     }}
     .filter-toggle::-webkit-details-marker {{ display: none; }}
     details[open] .filter-toggle {{
-      border-color: #c4a8ff;
-      color: #c4a8ff;
+      border-color: var(--accent);
+      color: var(--accent);
     }}
     .filter-bar {{
       display: flex;
@@ -799,16 +821,16 @@ INDEX_TEMPLATE = """\
     .search-input {{
       width: 100%;
       padding: 0.6rem 1rem;
-      background: #17112b;
-      border: 1px solid #2a2248;
+      background: var(--bg-input);
+      border: 1px solid var(--border-strong);
       border-radius: 8px;
-      color: #d8cff0;
+      color: var(--text);
       font-size: 0.9rem;
       box-sizing: border-box;
     }}
     .search-input:focus {{
       outline: none;
-      border-color: #c4a8ff;
+      border-color: var(--accent);
     }}
     .chip-row {{
       display: flex;
@@ -818,16 +840,16 @@ INDEX_TEMPLATE = """\
     }}
     .chip-label {{
       font-size: 0.72rem;
-      color: #8a7fb0;
+      color: var(--muted);
       padding-right: 0.2rem;
       white-space: nowrap;
     }}
     .chip {{
       padding: 0.25rem 0.7rem;
       border-radius: 999px;
-      border: 1px solid #1e1838;
+      border: 1px solid var(--border-faint);
       background: transparent;
-      color: #8a7fb0;
+      color: var(--muted);
       font-size: 0.75rem;
       cursor: pointer;
       transition: all 0.15s;
@@ -835,8 +857,8 @@ INDEX_TEMPLATE = """\
     }}
     .chip.active {{
       background: #2a1f50;
-      border-color: #5030a8;
-      color: #c4a8ff;
+      border-color: var(--accent-deep);
+      color: var(--accent);
     }}
 
     .sorting-hat {{
@@ -859,8 +881,8 @@ INDEX_TEMPLATE = """\
     }}
 
     .fic-card {{
-      background: #13102a;
-      border: 1px solid #221a40;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
       border-radius: 10px;
       padding: 1rem 1.2rem 0.9rem;
       text-decoration: none;
@@ -870,18 +892,18 @@ INDEX_TEMPLATE = """\
     }}
     .fic-card:hover {{
       border-color: #4a36a0;
-      background: #181330;
+      background: var(--bg-card-hover);
     }}
     .fic-title {{
       font-size: 1.1rem;
       font-weight: 600;
-      color: #cbb8ff;
+      color: var(--title);
       line-height: 1.3;
       margin-bottom: 0.2rem;
     }}
     .fic-author {{
       font-size: 0.8rem;
-      color: #8a7fb0;
+      color: var(--muted);
       margin-bottom: 0.55rem;
     }}
 
@@ -902,23 +924,23 @@ INDEX_TEMPLATE = """\
       font-size: 0.7rem;
       padding: 0.18rem 0.55rem;
       border-radius: 999px;
-      border: 1px solid #2a2248;
+      border: 1px solid var(--border-strong);
       background: #1a1638;
       color: #9080c0;
       white-space: nowrap;
     }}
-    .fic-badges.ship    {{ border-color: #4a34a0; color: #c4a8ff; background: #1e1540; }}
+    .fic-badges.ship    {{ border-color: #4a34a0; color: var(--accent); background: #1e1540; }}
     .fic-badges.rating-G {{ color: #72cc80; border-color: #2a4030; background: #111e18; }}
     .fic-badges.rating-T {{ color: #d4b86a; border-color: #3a3018; background: #1c1a10; }}
     .fic-badges.rating-M {{ color: #d48860; border-color: #3a2418; background: #1c1310; }}
     .fic-badges.rating-E {{ color: #d46880; border-color: #3a1828; background: #1c1018; }}
     .fic-badges.complete {{ color: #60b4cc; border-color: #1c3a48; background: #0e1e28; }}
     .fic-badges.wip      {{ color: #a888d8; border-color: #2a1e48; background: #150e28; }}
-    .fic-badges.words    {{ color: #8a7fb0; border-color: #201c38; background: transparent; }}
+    .fic-badges.words    {{ color: var(--muted); border-color: #201c38; background: transparent; }}
 
     .fic-summary {{
       font-size: 0.8rem;
-      color: #8878b0;
+      color: var(--muted);
       line-height: 1.55;
       margin-top: 0.3rem;
       display: -webkit-box;
@@ -935,7 +957,7 @@ INDEX_TEMPLATE = """\
     .more-btn {{
       background: none;
       border: none;
-      color: #8a7fb0;
+      color: var(--muted);
       font-size: 0.72rem;
       cursor: pointer;
       padding: 0;
@@ -943,17 +965,17 @@ INDEX_TEMPLATE = """\
     }}
 
     .more-btn:hover {{
-      color: #c4a8ff;
+      color: var(--accent);
     }}
     .no-results {{
       text-align: center;
-      color: #8a7fb0;
+      color: var(--muted);
       padding: 3rem 0;
       font-size: 0.9rem;
     }}
     .count-label {{
       font-size: 0.75rem;
-      color: #8a7fb0;
+      color: var(--muted);
       text-align: center;
       padding-bottom: 0.75rem;
     }}
@@ -967,7 +989,7 @@ INDEX_TEMPLATE = """\
       border-radius: 50%;
       border: 1px solid #4a34a0;
       background: #1e1540;
-      color: #c4a8ff;
+      color: var(--accent);
       font-size: 1.1rem;
       cursor: pointer;
       opacity: 0;
@@ -981,7 +1003,7 @@ INDEX_TEMPLATE = """\
     .to-top:hover {{ background: #2a1f50; opacity: 1; }}
 
     .roulette-chip {{ margin-left: auto; }}
-    .roulette-chip:hover {{ border-color: #2a4a34; color: #7fc98f; }}
+    .roulette-chip:hover {{ border-color: #2a4a34; color: var(--green); }}
     .header-nav {{
       display: flex;
       flex-wrap: wrap;
@@ -990,12 +1012,12 @@ INDEX_TEMPLATE = """\
       gap: 0.15rem 0.35rem;
       margin-bottom: 1rem;
     }}
-    .header-nav .sep {{ color: #3d3560; font-size: 0.72rem; }}
+    .header-nav .sep {{ color: var(--dim); font-size: 0.72rem; }}
     .nav-link {{
       background: none;
       border: 1px solid transparent;
       border-radius: 6px;
-      color: #8a7fb0;
+      color: var(--muted);
       font: inherit;
       font-size: 0.72rem;
       letter-spacing: 0.08em;
@@ -1004,15 +1026,15 @@ INDEX_TEMPLATE = """\
       cursor: pointer;
       transition: color 0.15s, border-color 0.15s;
     }}
-    .nav-link:hover, .nav-link:focus-visible {{ color: #c4a8ff; border-color: #2a2248; outline: none; }}
+    .nav-link:hover, .nav-link:focus-visible {{ color: var(--accent); border-color: var(--border-strong); outline: none; }}
     .stats-dialog {{
       width: min(560px, calc(100vw - 2rem));
       max-height: 85vh;
       margin: auto;
       padding: 0;
-      background: #13102a;
-      color: #d8cff0;
-      border: 1px solid #2a2248;
+      background: var(--bg-card);
+      color: var(--text);
+      border: 1px solid var(--border-strong);
       border-radius: 12px;
     }}
     .stats-dialog::backdrop {{ background: rgba(5, 3, 12, 0.75); }}
@@ -1028,7 +1050,7 @@ INDEX_TEMPLATE = """\
       font-size: 1rem;
       font-weight: 500;
       letter-spacing: 0.14em;
-      color: #c4a8ff;
+      color: var(--accent);
     }}
     .stats-close {{
       background: none;
@@ -1038,7 +1060,7 @@ INDEX_TEMPLATE = """\
       line-height: 1;
       cursor: pointer;
     }}
-    .stats-close:hover {{ color: #c4a8ff; }}
+    .stats-close:hover {{ color: var(--accent); }}
     .stat-tiles {{
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -1048,38 +1070,38 @@ INDEX_TEMPLATE = """\
       .stat-tiles {{ grid-template-columns: repeat(4, 1fr); }}
     }}
     .stat-tile {{
-      background: #0f0c22;
-      border: 1px solid #221a40;
+      background: var(--bg-sunken);
+      border: 1px solid var(--border);
       border-radius: 8px;
       padding: 0.7rem 0.75rem;
     }}
     .stat-num {{
       font-size: 1.35rem;
       font-weight: 600;
-      color: #e4dcff;
+      color: var(--text-bright);
       font-variant-numeric: tabular-nums;
     }}
     .stat-cap {{
       font-size: 0.66rem;
-      color: #8a7fb0;
+      color: var(--muted);
       text-transform: uppercase;
       letter-spacing: 0.08em;
       margin-top: 0.15rem;
     }}
     .stat-fun {{
       font-size: 0.8rem;
-      color: #8878b0;
+      color: var(--muted);
       line-height: 1.5;
       margin-top: 0.8rem;
     }}
-    .stat-fun b {{ color: #cbb8ff; font-weight: 600; }}
+    .stat-fun b {{ color: var(--title); font-weight: 600; }}
     .stats-section {{ margin-top: 1.5rem; }}
     .stats-section h3 {{
       font-size: 0.68rem;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      color: #8a7fb0;
+      color: var(--muted);
       margin-bottom: 0.55rem;
     }}
     .stat-fic {{
@@ -1088,7 +1110,7 @@ INDEX_TEMPLATE = """\
       line-height: 1.5;
       margin-bottom: 0.35rem;
     }}
-    .stat-fic a {{ color: #cbb8ff; text-decoration: none; }}
+    .stat-fic a {{ color: var(--title); text-decoration: none; }}
     .stat-fic a:hover {{ text-decoration: underline; }}
     .bar-row {{
       display: grid;
@@ -1112,7 +1134,7 @@ INDEX_TEMPLATE = """\
       text-align: left;
       cursor: pointer;
     }}
-    button.bar-label:hover {{ color: #c4a8ff; text-decoration: underline; }}
+    button.bar-label:hover {{ color: var(--accent); text-decoration: underline; }}
     .bar-track {{
       height: 6px;
       background: #1a1638;
@@ -1122,7 +1144,7 @@ INDEX_TEMPLATE = """\
     .bar-fill {{
       height: 100%;
       border-radius: 999px;
-      background: linear-gradient(90deg, #8a6ae0, #7fc98f);
+      background: linear-gradient(90deg, var(--grad-start), var(--grad-end));
     }}
     .bar-val {{
       text-align: right;
@@ -1140,7 +1162,7 @@ INDEX_TEMPLATE = """\
       display: flex;
       gap: 1.1rem;
       font-size: 0.76rem;
-      color: #8878b0;
+      color: var(--muted);
       margin-top: 0.45rem;
     }}
     .split-legend i {{
@@ -1152,7 +1174,7 @@ INDEX_TEMPLATE = """\
     }}
     .stats-hint {{
       font-size: 0.7rem;
-      color: #8a7fb0;
+      color: var(--muted);
       margin-top: 1.4rem;
       text-align: center;
     }}

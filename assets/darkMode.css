@@ -21,7 +21,7 @@
    2) Tokens (match index.html's purple-black palette)
    Purple + green = Agatha + Rio. Green is tuned to the same brightness as
    the lavender so they read as a pair; it's used sparingly (title,
-   scene breaks, accent bars) so purple stays the main highlight.
+   scene breaks) so purple stays the main highlight.
    ========================= */
 :root {
     --bg: #141122;            /* purple-tinted near-black, a step lighter than the index */
@@ -29,6 +29,8 @@
     --border-subtle: #2c2450;
     --accent: #c4a8ff;        /* same lavender as index titles/chips */
     --green: #7fc98f;         /* Rio green — same contrast as --accent */
+    --grad-start: #9900ff;    /* index title gradient */
+    --grad-end: #38ec5f;
     --text: #bdb4d6;          /* soft lavender, halfway to --muted; ~9:1 on --bg */
     --muted: #9d93bd;         /* ~6:1 on --bg-card */
 
@@ -136,8 +138,8 @@ hr {
     background: linear-gradient(
         to right,
         transparent,
-        var(--accent),
-        var(--green),
+        var(--grad-start),
+        var(--grad-end),
         transparent
     );
     opacity: 0.6;
