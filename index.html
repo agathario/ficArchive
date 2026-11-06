@@ -24,7 +24,7 @@
 
     /* Header section */
     .index-header {
-      padding: 2.5rem 1rem 1.25rem;
+      padding: 1rem 1rem 1.25rem;
       text-align: center;
       border-bottom: 1px solid #1e1838;
       margin-bottom: 2rem;
@@ -312,43 +312,31 @@
     }
     .to-top:hover { background: #2a1f50; opacity: 1; }
 
-    .index-header { position: relative; }
-    .stats-link {
-      position: absolute;
-      top: 0.9rem;
-      right: 1rem;
+    .roulette-chip { margin-left: auto; }
+    .roulette-chip:hover { border-color: #2a4a34; color: #7fc98f; }
+    .header-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 0.15rem 0.35rem;
+      margin-bottom: 1rem;
+    }
+    .header-nav .sep { color: #3d3560; font-size: 0.72rem; }
+    .nav-link {
       background: none;
       border: 1px solid transparent;
       border-radius: 6px;
       color: #8a7fb0;
-      font-size: 0.72rem;
-      letter-spacing: 0.08em;
-      padding: 0.25rem 0.5rem;
-      cursor: pointer;
-      transition: color 0.15s, border-color 0.15s;
-    }
-    .roulette-chip { margin-left: auto; }
-    .roulette-chip:hover { border-color: #2a4a34; color: #7fc98f; }
-    .rank-link {
-      position: absolute;
-      top: 0.9rem;
-      left: 1rem;
-      border: 1px solid transparent;
-      border-radius: 6px;
-      color: #8a7fb0;
+      font: inherit;
       font-size: 0.72rem;
       letter-spacing: 0.08em;
       padding: 0.25rem 0.5rem;
       text-decoration: none;
+      cursor: pointer;
       transition: color 0.15s, border-color 0.15s;
     }
-    .rank-link:hover, .rank-link:focus-visible { color: #c4a8ff; border-color: #2a2248; outline: none; }
-    .kudos-link { top: 2.6rem; }
-    .stats-link:hover, .stats-link:focus-visible {
-      color: #c4a8ff;
-      border-color: #2a2248;
-      outline: none;
-    }
+    .nav-link:hover, .nav-link:focus-visible { color: #c4a8ff; border-color: #2a2248; outline: none; }
     .stats-dialog {
       width: min(560px, calc(100vw - 2rem));
       max-height: 85vh;
@@ -524,9 +512,13 @@
 <body>
 
 <div class="index-header">
-  <button class="stats-link" id="stats-open" type="button" title="Archive stats">✦ stats</button>
-  <a class="rank-link" href="rank.html" title="Rank your top 25">♛ top 25</a>
-  <a class="rank-link kudos-link" href="kudos.html" title="Kudos reminders">♡ kudos list</a>
+  <nav class="header-nav">
+    <a class="nav-link" href="rank.html" title="Rank your top 25">♛ top 25</a>
+    <span class="sep" aria-hidden="true">·</span>
+    <a class="nav-link" href="kudos.html" title="Kudos reminders">♡ kudos list</a>
+    <span class="sep" aria-hidden="true">·</span>
+    <button class="nav-link" id="stats-open" type="button" title="Archive stats">✦ stats</button>
+  </nav>
   <div class="header-stars" aria-hidden="true">⋆˖⁺‧₊ ☾ ₊‧⁺˖⋆</div>
   <h1>❤︎ AgathaRio ❤︎</h1>
   <div class="header-rule"></div>
@@ -541,7 +533,7 @@
     <p><b>ABOUT THE SITE</b></p>
     <ul>
       <li>feel free to use the top 25 feature at the top left if you get bored. it's local to whatever machine you're on.</li>
-      <li>each fic has a kudos reminder button at the bottom. this saves a reminder locally and can be accessed at the link at the top left of this index page.</li>
+      <li>each fic has a kudos reminder button at the bottom. this saves a reminder locally and can be accessed at the link at the top of this index page.</li>
       <li>tags on the index page are truncated. all author's tags are still intact within the fic, so please check before you read.</li>
     </ul>
     <br>
