@@ -203,7 +203,6 @@ Posted originally on the <a href="https://archiveofourown.org/">Archive of Our O
 
 <div id="afterword">
 <h2 class="toc-heading">Afterword</h2>
-{after}<p class="message">Converted from a saved .mht page by mht_convert.py.</p>
 </div>
 
 </body>

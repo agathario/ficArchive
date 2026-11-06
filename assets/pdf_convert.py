@@ -340,7 +340,7 @@ Posted originally on the <a href="https://archiveofourown.org/">Archive of Our O
 
 <div id="afterword">
 <h2 class="toc-heading">Afterword</h2>
-{after}<p class="message">Converted from PDF by pdf_convert.py.</p>
+{after}<p class="message"></p>
 </div>
 
 </body>

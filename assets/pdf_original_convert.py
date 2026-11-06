@@ -144,7 +144,6 @@ Chapters: {n}/{"?" if a.wip else n}
 
 <div id="afterword">
 <h2 class="toc-heading">Afterword</h2>
-<p class="message">Converted from PDF (never posted on AO3) by pdf_original_convert.py.</p>
 </div>
 
 </body>

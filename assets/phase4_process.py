@@ -674,11 +674,12 @@ INDEX_TEMPLATE = """\
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Agathario Archive</title>
+  <title>AgathaRio</title>
 {favicon}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after {{ box-sizing: border-box; margin: 0; padding: 0; }}
 
@@ -689,21 +690,20 @@ INDEX_TEMPLATE = """\
       min-height: 100vh;
     }}
 
-    /* ---- Header ---- */
+    /* Header section */
     .index-header {{
       padding: 2.5rem 1rem 1.25rem;
       text-align: center;
       border-bottom: 1px solid #1e1838;
       margin-bottom: 2rem;
     }}
-    /* Title: Cinzel caps in Agatha purple → Rio green (falls back to Georgia offline) */
     .index-header h1 {{
       font-family: "Cinzel", Georgia, serif;
-      font-size: clamp(1.15rem, 6vw, 1.55rem); /* stays on one line on small phones */
+      font-size: clamp(1.15rem, 6vw, 1.55rem);
       font-weight: 500;
       letter-spacing: 0.18em;
-      padding-left: 0.18em; /* balance trailing letter-spacing */
-      background: linear-gradient(90deg, #c4a8ff, #7fc98f);
+      padding-left: 0.18em;
+      background: linear-gradient(90deg, #9900ff, #38ec5f);
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -711,7 +711,7 @@ INDEX_TEMPLATE = """\
     .header-stars {{
       font-size: 0.8rem;
       letter-spacing: 0.6em;
-      padding-left: 0.6em; /* balance trailing letter-spacing */
+      padding-left: 0.6em;
       color: #5a4a8a;
       margin-bottom: 0.4rem;
     }}
@@ -725,15 +725,10 @@ INDEX_TEMPLATE = """\
     .index-header p {{
       margin-top: 0.35rem;
       font-size: 0.8rem;
-      color: #6a5e8a;
-    }}
-    .last-updated {{
-      font-size: 0.72rem;
-      color: #3d3560;
-      margin-top: 0.2rem;
+      color: #8a7fb0;
     }}
 
-    /* ---- Visitor banner ---- */
+    /* site disclaimer */
     .non-willow-notice {{
       max-width: 660px;
       margin: -0.75rem auto 1.5rem;
@@ -773,7 +768,7 @@ INDEX_TEMPLATE = """\
     .non-willow-body ul {{ padding-left: 1.2rem; }}
     .non-willow-body li + li {{ margin-top: 0.2rem; }}
 
-    /* ---- Collapsible filter/search ---- */
+    /* filter section */
     .search-n-filter {{
       max-width: 660px;
       margin: 0 auto 0.75rem;
@@ -783,7 +778,7 @@ INDEX_TEMPLATE = """\
       list-style: none;
       cursor: pointer;
       font-size: 0.78rem;
-      color: #6a5e8a;
+      color: #8a7fb0;
       padding: 0.3rem 0.7rem;
       border: 1px solid #1e1838;
       border-radius: 6px;
@@ -823,7 +818,7 @@ INDEX_TEMPLATE = """\
     }}
     .chip-label {{
       font-size: 0.72rem;
-      color: #5a5078;
+      color: #8a7fb0;
       padding-right: 0.2rem;
       white-space: nowrap;
     }}
@@ -832,7 +827,7 @@ INDEX_TEMPLATE = """\
       border-radius: 999px;
       border: 1px solid #1e1838;
       background: transparent;
-      color: #6a5e8a;
+      color: #8a7fb0;
       font-size: 0.75rem;
       cursor: pointer;
       transition: all 0.15s;
@@ -844,7 +839,6 @@ INDEX_TEMPLATE = """\
       color: #c4a8ff;
     }}
 
-    /* ---- Sort row ---- */
     .sorting-hat {{
       display: flex;
       flex-wrap: wrap;
@@ -855,7 +849,6 @@ INDEX_TEMPLATE = """\
       padding: 0 1rem;
     }}
 
-    /* ---- Card grid ---- */
     .fic-list {{
       display: flex;
       flex-direction: column;
@@ -865,7 +858,6 @@ INDEX_TEMPLATE = """\
       margin: 0 auto;
     }}
 
-    /* ---- Fic card ---- */
     .fic-card {{
       background: #13102a;
       border: 1px solid #221a40;
@@ -889,18 +881,16 @@ INDEX_TEMPLATE = """\
     }}
     .fic-author {{
       font-size: 0.8rem;
-      color: #7a6da0;
+      color: #8a7fb0;
       margin-bottom: 0.55rem;
     }}
 
-    /* meta row: ship / rating / status / words */
     .fic-meta {{
       display: flex;
       flex-wrap: wrap;
       gap: 0.3rem;
       margin-bottom: 0.35rem;
     }}
-    /* extra custom tags row */
     .fic-tags {{
       display: flex;
       flex-wrap: wrap;
@@ -908,8 +898,7 @@ INDEX_TEMPLATE = """\
       margin-bottom: 0.35rem;
     }}
 
-    /* ---- Badges ---- */
-    .badge {{
+    .fic-badges {{
       font-size: 0.7rem;
       padding: 0.18rem 0.55rem;
       border-radius: 999px;
@@ -918,14 +907,14 @@ INDEX_TEMPLATE = """\
       color: #9080c0;
       white-space: nowrap;
     }}
-    .badge.ship    {{ border-color: #4a34a0; color: #c4a8ff; background: #1e1540; }}
-    .badge.rating-G {{ color: #72cc80; border-color: #2a4030; background: #111e18; }}
-    .badge.rating-T {{ color: #d4b86a; border-color: #3a3018; background: #1c1a10; }}
-    .badge.rating-M {{ color: #d48860; border-color: #3a2418; background: #1c1310; }}
-    .badge.rating-E {{ color: #d46880; border-color: #3a1828; background: #1c1018; }}
-    .badge.complete {{ color: #60b4cc; border-color: #1c3a48; background: #0e1e28; }}
-    .badge.wip      {{ color: #a888d8; border-color: #2a1e48; background: #150e28; }}
-    .badge.words    {{ color: #6a6090; border-color: #201c38; background: transparent; }}
+    .fic-badges.ship    {{ border-color: #4a34a0; color: #c4a8ff; background: #1e1540; }}
+    .fic-badges.rating-G {{ color: #72cc80; border-color: #2a4030; background: #111e18; }}
+    .fic-badges.rating-T {{ color: #d4b86a; border-color: #3a3018; background: #1c1a10; }}
+    .fic-badges.rating-M {{ color: #d48860; border-color: #3a2418; background: #1c1310; }}
+    .fic-badges.rating-E {{ color: #d46880; border-color: #3a1828; background: #1c1018; }}
+    .fic-badges.complete {{ color: #60b4cc; border-color: #1c3a48; background: #0e1e28; }}
+    .fic-badges.wip      {{ color: #a888d8; border-color: #2a1e48; background: #150e28; }}
+    .fic-badges.words    {{ color: #8a7fb0; border-color: #201c38; background: transparent; }}
 
     .fic-summary {{
       font-size: 0.8rem;
@@ -937,20 +926,38 @@ INDEX_TEMPLATE = """\
       -webkit-box-orient: vertical;
       overflow: hidden;
     }}
+
+    .fic-summary.open {{
+      display: block;
+      -webkit-line-clamp: unset;
+    }}
+
+    .more-btn {{
+      background: none;
+      border: none;
+      color: #8a7fb0;
+      font-size: 0.72rem;
+      cursor: pointer;
+      padding: 0;
+      margin-top: 0.3rem;
+    }}
+
+    .more-btn:hover {{
+      color: #c4a8ff;
+    }}
     .no-results {{
       text-align: center;
-      color: #5a5078;
+      color: #8a7fb0;
       padding: 3rem 0;
       font-size: 0.9rem;
     }}
     .count-label {{
       font-size: 0.75rem;
-      color: #5a5078;
+      color: #8a7fb0;
       text-align: center;
       padding-bottom: 0.75rem;
     }}
 
-    /* ---- Back to top ---- */
     .to-top {{
       position: fixed;
       right: 1.25rem;
@@ -973,7 +980,6 @@ INDEX_TEMPLATE = """\
     }}
     .to-top:hover {{ background: #2a1f50; opacity: 1; }}
 
-    /* ---- Stats link + dialog ---- */
     .index-header {{ position: relative; }}
     .stats-link {{
       position: absolute;
@@ -982,7 +988,7 @@ INDEX_TEMPLATE = """\
       background: none;
       border: 1px solid transparent;
       border-radius: 6px;
-      color: #3d3560;
+      color: #8a7fb0;
       font-size: 0.72rem;
       letter-spacing: 0.08em;
       padding: 0.25rem 0.5rem;
@@ -997,7 +1003,7 @@ INDEX_TEMPLATE = """\
       left: 1rem;
       border: 1px solid transparent;
       border-radius: 6px;
-      color: #3d3560;
+      color: #8a7fb0;
       font-size: 0.72rem;
       letter-spacing: 0.08em;
       padding: 0.25rem 0.5rem;
@@ -1067,7 +1073,7 @@ INDEX_TEMPLATE = """\
     }}
     .stat-cap {{
       font-size: 0.66rem;
-      color: #6a5e8a;
+      color: #8a7fb0;
       text-transform: uppercase;
       letter-spacing: 0.08em;
       margin-top: 0.15rem;
@@ -1085,7 +1091,7 @@ INDEX_TEMPLATE = """\
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.12em;
-      color: #5a5078;
+      color: #8a7fb0;
       margin-bottom: 0.55rem;
     }}
     .stat-fic {{
@@ -1158,7 +1164,7 @@ INDEX_TEMPLATE = """\
     }}
     .stats-hint {{
       font-size: 0.7rem;
-      color: #4a4068;
+      color: #8a7fb0;
       margin-top: 1.4rem;
       text-align: center;
     }}
@@ -1176,11 +1182,10 @@ INDEX_TEMPLATE = """\
   <button class="stats-link" id="stats-open" type="button" title="Archive stats">✦ stats</button>
   <a class="rank-link" href="rank.html" title="Rank your top 25">♛ top 25</a>
   <a class="rank-link kudos-link" href="kudos.html" title="Kudos reminders">♡ kudos list</a>
-  <div class="header-stars" aria-hidden="true">✦ ⋆ ☾ ⋆ ✦</div>
-  <h1>Agathario Archive</h1>
+  <div class="header-stars" aria-hidden="true">⋆˖⁺‧₊ ☾ ₊‧⁺˖⋆</div>
+  <h1>❤︎ AgathaRio ❤︎</h1>
   <div class="header-rule"></div>
   <p id="fic-count"></p>
-  <p class="last-updated">last updated {last_updated}</p>
 </div>
 
 <details class="non-willow-notice">
@@ -1207,26 +1212,26 @@ INDEX_TEMPLATE = """\
 </details>
 
 <details class="search-n-filter">
-  <summary class="filter-toggle">Filter &amp; search ▾</summary>
+  <summary class="filter-toggle">filter &amp; search ▾</summary>
   <div class="filter-bar">
     <input class="search-input" type="search" id="search"
-           placeholder="Search title, author, ship, summary, tags…" autocomplete="off">
+           placeholder="searches title, author, ship, summary, tags..." autocomplete="off">
     <div class="chip-row" id="rating-chips">
-      <span class="chip-label">Rating:</span>
+      <span class="chip-label">rating:</span>
     </div>
     <div class="chip-row" id="status-chips">
-      <span class="chip-label">Status:</span>
+      <span class="chip-label">status:</span>
     </div>
   </div>
 </details>
 
 <div class="sorting-hat">
-  <span class="chip-label">Sort:</span>
-  <button class="chip active" data-sort="default">Default</button>
-  <button class="chip" data-sort="wc_desc">Words</button>
-  <button class="chip" data-sort="updated">Updated</button>
-  <button class="chip" data-sort="alpha">A–Z</button>
-  <button class="chip roulette-chip" id="roulette-fic" type="button" title="Open a random fic from the ones showing">⚄ Random</button>
+  <span class="chip-label">sort:</span>
+  <button class="chip active" data-sort="default">default</button>
+  <button class="chip" data-sort="wc_desc">words</button>
+  <button class="chip" data-sort="updated">updated</button>
+  <button class="chip" data-sort="alpha">a–z</button>
+  <button class="chip roulette-chip" id="roulette-fic" type="button" title="Open a random fic from the ones showing">⚄ random</button>
 </div>
 
 <div class="pinned-filter" id="pinned-filter"></div>
@@ -1306,7 +1311,7 @@ function buildChips(containerId, values, key, labels = {{}}) {{
     .forEach(val => {{
     const chip = document.createElement("button");
     chip.className = "chip";
-    chip.textContent = labels[val.toLowerCase()] || val;
+    chip.textContent = labels[val.toLowerCase()] || val.toLowerCase();
     chip.title = val;
     chip.dataset.key = key;
     chip.dataset.val = val.toLowerCase();
@@ -1355,29 +1360,58 @@ function render() {{
       <div class="fic-title">${{fic.title || "Untitled"}}</div>
       <div class="fic-author">by ${{fic.author || "Unknown"}}</div>
       <div class="fic-meta">
-        ${{fic.ship   ? `<span class="badge ship">${{fic.ship}}</span>` : ""}}
-        ${{rc         ? `<span class="badge ${{rc}}">${{fic.rating}}</span>` : ""}}
-        ${{sc         ? `<span class="badge ${{sc}}">${{fic.status}}</span>` : ""}}
-        ${{wc         ? `<span class="badge words">${{wc}} words</span>` : ""}}
+        ${{fic.ship   ? `<span class="fic-badges ship">${{fic.ship}}</span>` : ""}}
+        ${{rc         ? `<span class="fic-badges ${{rc}}">${{fic.rating}}</span>` : ""}}
+        ${{sc         ? `<span class="fic-badges ${{sc}}">${{fic.status}}</span>` : ""}}
+        ${{wc         ? `<span class="fic-badges words">${{wc}} words</span>` : ""}}
       </div>
-      ${{extraTags.length ? `<div class="fic-tags">${{extraTags.map(t => `<span class="badge">${{t}}</span>`).join("")}}</div>` : ""}}
+      ${{extraTags.length ? `<div class="fic-tags">${{extraTags.map(t => `<span class="fic-badges">${{t}}</span>`).join("")}}</div>` : ""}}
       ${{fic.summary ? `<p class="fic-summary">${{fic.summary}}</p>` : ""}}
     `;
     grid.appendChild(card);
   }});
 
   if (visible === 0) {{
-    grid.innerHTML = '<p class="no-results">No fics match your filters.</p>';
+    grid.innerHTML = '<p class="no-results">no fics match your filters.</p>';
   }}
+
+  markLongSummaries();
 
   document.getElementById("pinned-filter").innerHTML = pinned
     ? `<button class="chip active" type="button" title="Clear filter">${{pinned.key === "tag" ? "Tag" : "Author"}}: ${{esc(pinned.val)}} ✕</button>`
     : "";
   document.getElementById("visible-count").textContent =
-    visible === FICS.length ? "" : `Showing ${{visible}} of ${{FICS.length}}`;
+    visible === FICS.length ? "" : `showing ${{visible}} of ${{FICS.length}}`;
   document.getElementById("fic-count").textContent =
-    `${{FICS.length}} fic${{FICS.length !== 1 ? "s" : ""}} archived`;
+    `${{FICS.length}} fic${{FICS.length !== 1 ? "s" : ""}} archived{as_of}`;
 }}
+
+function markLongSummaries() {{
+  document.querySelectorAll("#fic-list .fic-summary").forEach(s => {{
+    if (s.classList.contains("open")) return;
+    const next = s.nextElementSibling;
+    const btn = next && next.classList.contains("more-btn") ? next : null;
+    const cut = s.scrollHeight > s.clientHeight + 1;
+    if (cut && !btn) s.insertAdjacentHTML("afterend", '<button class="more-btn" type="button">more ▾</button>');
+    if (!cut && btn) btn.remove();
+  }});
+}}
+
+// the whole card is a link, so stop "more" from opening the fic
+document.getElementById("fic-list").addEventListener("click", e => {{
+  const btn = e.target.closest(".more-btn");
+  if (!btn) return;
+  e.preventDefault();
+  const s = btn.previousElementSibling;
+  s.classList.toggle("open");
+  btn.textContent = s.classList.contains("open") ? "less ▴" : "more ▾";
+}});
+
+let resizeTimer;
+window.addEventListener("resize", () => {{
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(markLongSummaries, 150);
+}});
 
 document.querySelectorAll(".sorting-hat .chip[data-sort]").forEach(chip => {{
   chip.addEventListener("click", () => {{
@@ -1545,10 +1579,10 @@ def build_index(manifest: dict):
     fics_json = json.dumps(manifest["fics"], ensure_ascii=False)
     try:
         dt = datetime.fromisoformat(manifest.get("last_updated", ""))
-        last_updated = dt.strftime(f"%B {dt.day}, %Y")
+        as_of = dt.strftime(" as of %b %d")   # e.g. " as of Nov 02"
     except ValueError:
-        last_updated = "unknown"
-    html = INDEX_TEMPLATE.format(fics_json=fics_json, last_updated=last_updated, pendo=PENDO_SNIPPET,
+        as_of = ""
+    html = INDEX_TEMPLATE.format(fics_json=fics_json, as_of=as_of, pendo=PENDO_SNIPPET,
                                  favicon=favicon_links())
     with open(INDEX_FILE, "w", encoding="utf-8") as f:
         f.write(html)

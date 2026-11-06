@@ -194,25 +194,6 @@ blockquote {
     position: relative;
 }
 
-blockquote {
-    padding-left: var(--space-6);  /* clear the accent bar */
-}
-
-blockquote::before {
-    content: "";
-    position: absolute;
-    left: 0.7rem;
-    top: 0.8rem;
-    bottom: 0.8rem;
-    width: 2px;
-    border-radius: 999px;
-    background: linear-gradient(
-        to bottom,
-        var(--accent),
-        var(--green) 70%,
-        transparent
-    );
-}
 
 /* =========================
    8) Media & tables

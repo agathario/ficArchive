@@ -1,13 +1,3 @@
-/*
-  assets/kudos.js
-  ===============
-  Adds an "add reminder to give author kudos" button to the bottom of a fic
-  page. Reminders live in localStorage (same as the top 25 ranker), so they're
-  local to whatever machine/browser you're on. The list is shown on kudos.html.
-
-  Injected into every archive page by phase4_process.py;
-  assets/add_kudos.py backfills it into existing files.
-*/
 (function () {
   var STORE_KEY = "ficKudos.v1";
 

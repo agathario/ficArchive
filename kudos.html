@@ -18,7 +18,6 @@
     }
     a { color: #c4a8ff; }
 
-    /* ---- Header (same as rank.html) ---- */
     .archive-header {
       position: relative;
       padding: 2.5rem 1rem 1.25rem;
@@ -55,7 +54,7 @@
       position: absolute;
       top: 0.9rem;
       left: 1rem;
-      color: #3d3560;
+      color: #8a7fb0;
       font-size: 0.72rem;
       letter-spacing: 0.08em;
       padding: 0.25rem 0.5rem;
@@ -66,9 +65,8 @@
     }
     .back-link:hover, .back-link:focus-visible { color: #c4a8ff; border-color: #2a2248; outline: none; }
 
-    /* ---- List ---- */
     main { max-width: 660px; margin: 0 auto; padding: 0 1rem 3rem; }
-    .note { color: #5a4a8a; font-size: 0.8rem; text-align: center; margin-bottom: 1rem; }
+    .note { color: #8a7fb0; font-size: 0.8rem; text-align: center; margin-bottom: 1rem; }
     .empty { color: #8a7fb0; text-align: center; padding: 2rem 0; }
     ul { list-style: none; }
     li {
@@ -90,7 +88,7 @@
       background: none;
       border: 1px solid transparent;
       border-radius: 6px;
-      color: #5a4a8a;
+      color: #8a7fb0;
       font-size: 0.75rem;
       padding: 0.25rem 0.5rem;
       cursor: pointer;
@@ -121,13 +119,13 @@
 
 <div class="archive-header">
   <a class="back-link" href="index.html">← archive</a>
-  <div class="header-stars" aria-hidden="true">✦ ⋆ ♡ ⋆ ✦</div>
-  <h1>Kudos List</h1>
+  <div class="header-stars" aria-hidden="true">⋆˖⁺‧₊ ☾ ₊‧⁺˖⋆</div>
+  <h1>Pre-Kudos</h1>
   <div class="header-rule"></div>
 </div>
 
 <main>
-  <p class="note">fics to go leave kudos on. saved locally on this machine.</p>
+  <p class="note">fics to go leave kudos on when ao3 is back up. saved locally on this device.</p>
   <ul id="list"></ul>
 </main>
 
@@ -150,7 +148,7 @@ function render() {
   const ul = document.getElementById("list");
   ul.innerHTML = "";
   if (!list.length) {
-    ul.innerHTML = '<p class="empty">nothing here yet — hit the kudos button at the bottom of a fic.</p>';
+    ul.innerHTML = '<p class="empty">ummm why are there no kudos here?  shame 🔔</p>';
     return;
   }
   for (const fic of list) {
