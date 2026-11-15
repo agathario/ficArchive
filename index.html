@@ -716,8 +716,10 @@
   <div class="non-willow-notice">
     <div class="non-willow-body">
       <p><b>ao3 hath returned!!</b></p>
-      <p>...and as such, i've taken this site down and returned it to the depths so everyone can interact with fics in their natural habitat of ao3.</p>
-      <p>i will leave this index page up for a while so you can access your kudos list. don't forget to go kudos and comment on the fics you read during the outage!</p>
+      <p>...and as such, i've taken this site down and returned it to the depths so everyone can interact with fics in
+        their natural habitat of ao3.</p>
+      <p>i will leave this index page up for a while so you can access your kudos list. don't forget to go kudos and
+        comment on the fics you read during the outage!</p>
       <p>i hope my silly little site helped keep you warm during this dark time.</p>
       <p>♡ willow</p>
       <p>p.s. if it tanks again, i'll be back</p>
@@ -729,6 +731,242 @@
     <a class="nav-link" href="kudos.html" title="Kudos reminders">♡ kudos list</a>
     <span class="sep" aria-hidden="true">·</span>
   </nav>
+  <br>
+  <div class="non-willow-notice">
+    <div class="non-willow-body">
+      <p>p.p.s. I got really used to this color scheme so I hacked together an ao3 skin that is mostly the same. just
+        copy the css below and paste it into a new ao3 site skin.</p>
+      <div class="code-container" style="margin-top: 1rem;">
+        <button class="nav-link" style="border: 2px solid var(--border); margin-bottom: 1rem;"
+          onclick="copyCode(this)">copy code</button>
+        <div>
+          <pre style="background: var(--border); font-size: 0.75em;"><code style="background: var(--border); color: var(--muted);">#outer .region,
+#footer .group,
+.post fieldset fieldset,
+fieldset fieldset {
+  background: #141122;
+  color: #bdb4d6;
+  border-color: #514b6a;
+  outline: #111;
+  box-shadow: none;
+}
+
+body,
+.group,
+.group .group,
+.region,
+.flash,
+fieldset,
+fieldset fieldset ul,
+form dl,
+textarea,
+#main .verbose legend,
+.verbose fieldset,
+.notice,
+ul.notes,
+input,
+textarea,
+table,
+th,
+td:hover,
+tr:hover,
+.symbol .question:hover,
+#modal,
+.ui-sortable li,
+.required .autocomplete,
+.autocomplete .notice,
+.system .intro,
+.comment_error,
+.kudos_error,
+div.dynamic,
+.dynamic form,
+#ui-datepicker-div,
+.ui-datepicker table,
+.annotation {
+  background: #141122;
+  color: #bdb4d6;
+  border-color: #514b6a;
+  outline: #111;
+  box-shadow: none;
+}
+
+.actions a,
+.actions a:link,
+.action,
+.action:link,
+.actions button,
+.actions input,
+input[type="submit"],
+button,
+.actions label {
+  background: #141122;
+  border-radius: 5px;
+  border: 1px solid #514b6a;
+  box-shadow: inset 0 -8px 4px #141122, inset 0 8px 7px #514b6a;
+}
+
+#header ul.primary,
+#outer #footer,
+.toggled form {
+  background: #141122;
+}
+
+#outer,
+.javascript,
+.statistics .index li:nth-of-type(even),
+#tos_prompt,
+.nomination dt {
+  background: #141122;
+}
+
+.qtip-content,
+.notice:not(.required),
+.comment_notice,
+.kudos_notice,
+ul.notes,
+.caution,
+.notice a {
+  color: #8a6ed6;
+}
+
+#header .actions a:hover,
+#header .actions a:focus,
+#header .dropdown:hover a,
+#header .open a,
+#header .menu,
+#small_login,
+.group.listbox,
+fieldset fieldset.listbox,
+form blockquote.userstuff,
+input:focus,
+textarea:focus,
+li.relationships a,
+.group.listbox .index,
+.dashboard fieldset fieldset.listbox .index,
+#dashboard a:hover,
+th,
+#dashboard .secondary,
+.secondary,
+.work.navigation .download,
+.javascript .work.navigation .download .secondary,
+.thread .even,
+.ui-datepicker tr:hover Specificity: (1,
+  2,
+  1) {
+  background: #241f3d;
+}
+
+a,
+a:link,
+a.tag,
+#header a,
+#header a:visited,
+#header .primary .open a,
+#header .primary .dropdown:hover a,
+#header .primary .dropdown a:focus,
+#header #search input:focus,
+#header #search input:hover,
+#dashboard a,
+#dashboard span,
+#dashboard .current,
+.heading,
+.group .heading,
+.filters dt a:hover {
+  color: #D9CFFF;
+}
+
+#header .actions a:hover,
+#header .actions a:focus,
+#header .dropdown:hover a,
+#header .open a,
+#header .menu,
+#small_login,
+.group.listbox,
+fieldset fieldset.listbox,
+form blockquote.userstuff,
+input:focus,
+textarea:focus,
+li.relationships a,
+.group.listbox .index,
+.dashboard fieldset fieldset.listbox .index,
+#dashboard a:hover,
+th,
+#dashboard .secondary,
+.secondary,
+.work.navigation .download,
+.javascript .work.navigation .download .secondary,
+.thread .even,
+.ui-datepicker tr:hover {
+  background: #141122;
+}
+
+#dashboard .current,
+.actions a:active,
+#outer .current,
+a.current,
+.current a:visited,
+span.unread,
+.replied,
+span.claimed,
+dl.index dd,
+.own,
+.draft,
+.unread,
+.child,
+.unwrangled,
+.unreviewed,
+.ui-sortable li:hover Specificity: (1,
+  1,
+  0) {
+  background: #6a5ab7;
+  border-color: #514b6a;
+  box-shadow: -1px -1px 3px #000;
+  color: white;
+}
+
+a:visited,
+.actions a:visited,
+.action a:link,
+.action a:visited,
+.listbox .heading a:visited,
+span.series .divider {
+  color: #3d641e;
+}
+
+body:has(.userstuff p.font-claude-response-body) #outer,
+body:has(.userstuff p.font-claude-response-body) #main,
+body:has(.userstuff p.font-claude-response-body) .userstuff,
+body:has(.userstuff p.font-claude-response-body) .userstuff p,
+body:has(.userstuff p.font-claude-response-body) .userstuff div {
+  background: #ff0000 !important;
+  color: #ffffff !important;
+} </code></pre>
+        </div>
+      </div>
+
+      <script>
+        // thanks, google 
+        function copyCode(button) {
+          const codeBlock = button.nextElementSibling.querySelector('code');
+          const textToCopy = codeBlock.innerText;
+          navigator.clipboard.writeText(textToCopy).then(() => {
+            // tell you it worked
+            button.innerText = 'copied! now go paste it!';
+            button.classList.add('copied');
+
+            // reset the button but snarky
+            setTimeout(() => {
+              button.innerText = 'copy code (again if you really want to)';
+              button.classList.remove('copied');
+            }, 2000);
+          }).catch(err => {
+            console.error('Failed to copy text: ', err);
+          });
+        }
+      </script>
+    </div>
+
+  </div>
   <button class="to-top" id="to-top" type="button" aria-label="Back to top" title="Back to top">↑</button>
 
 </body>

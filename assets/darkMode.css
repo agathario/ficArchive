@@ -1,5 +1,5 @@
 /* =========================
-   1) Font face
+   1) Font
    ========================= */
 @font-face {
     font-family: "Lucida";
@@ -18,10 +18,7 @@
 }
 
 /* =========================
-   2) Tokens (match index.html's purple-black palette)
-   Purple + green = Agatha + Rio. Green is tuned to the same brightness as
-   the lavender so they read as a pair; it's used sparingly (title,
-   scene breaks) so purple stays the main highlight.
+   2) CSS variables
    ========================= */
 :root {
     --bg: #141122;            /* purple-tinted near-black, a step lighter than the index */
